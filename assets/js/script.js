@@ -1,1 +1,122 @@
 console.log("JavaScript carregado com sucesso!");
+
+/*let quantidade = 3;
+
+console.log(quantidade);
+
+quantidade = 5;
+
+console.log(quantidade);*/
+
+const nomeCurso = "Desenvolvimento de Interfaces Web";
+
+console.log(nomeCurso);
+
+/*const nome = "Carlos";
+const idade = 24;
+const aprovado = true;
+const endereco = undefined;
+const observacao = null;
+
+console.log(typeof nome);
+console.log(typeof idade);
+console.log(typeof aprovado);*/
+
+console.log(typeof "Olá");
+console.log(typeof 42);
+console.log(typeof false);
+
+/*const nome = "Ana";
+const idade = 21;
+
+const mensagem =
+    `Nome: ${nome} | Idade: ${idade}`;
+
+console.log(mensagem);*/
+
+/*const preco = 120;
+const quantidade = 3;
+const percentualDesconto = 10;
+
+const subtotal = preco * quantidade;
+
+/*console.log(subtotal);
+const desconto = subtotal * percentualDesconto / 100;
+
+const total = subtotal - desconto
+
+console.log (`Subtotal: ${subtotal}`);
+console.log (`Desconto: ${desconto}`);
+console.log (`Total: ${total}`);*/
+
+const a = 10;
+const b = 3;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
+
+const resultado1 = 10 + 5 * 2;
+const resultado2 = (10 + 5) * 2;
+
+console.log(resultado1);
+console.log(resultado2);
+
+/*const idade = 18;
+
+console.log(idade > 18);
+console.log(idade >= 18);
+console.log(idade < 18);
+console.log(idade <= 18);*/
+
+/*const quantidade = 10;
+
+console.log(quantidade === 10);
+console.log(quantidade !== 10);
+console.log(10 === 10);
+console.log(10 === "10");*/
+
+const idade = 20;
+const possuiIngresso = true;
+
+const podeEntrar =
+    idade >= 18 && possuiIngresso;
+
+console.log(podeEntrar);
+
+const ehProfessor = false;
+const ehAluno = true;
+const possuiAcesso =
+    ehProfessor || ehAluno;
+
+console.log(possuiAcesso);
+
+const bloqueado = false;
+
+console.log(!bloqueado);
+
+const nomeProduto = "celular";
+const preco = 1000;
+const quantidade = 5;
+const percentualDesconto = 10;
+const disponibilidade = true;
+
+const subtotal = preco * quantidade;
+const desconto = subtotal * (percentualDesconto / 100);
+const valorFinal = subtotal - desconto;
+
+console.log(`Produto: ${nomeProduto}`);
+console.log(`Preço unitário: ${preco}`);
+console.log(`Quantidade: ${quantidade}`);
+console.log(`Percentual de desconto: ${percentualDesconto}%`);
+console.log(`Disponível: ${disponibilidade ? "Sim" : "Não"}`);
+
+console.log(`Subtotal: ${subtotal}`);
+console.log(`Desconto: ${desconto}`);
+console.log(`Valor Final: ${valorFinal}`);
+
+console.log (typeof nomeProduto)
+console.log (typeof preco)
+console.log (typeof disponibilidade)
