@@ -78,15 +78,15 @@ console.log(quantidade !== 10);
 console.log(10 === 10);
 console.log(10 === "10");*/
 
-const idade = 20;
+/*const idade = 20;
 const possuiIngresso = true;
 
 const podeEntrar =
     idade >= 18 && possuiIngresso;
 
-console.log(podeEntrar);
+console.log(podeEntrar);*/
 
-const ehProfessor = false;
+/*const ehProfessor = false;
 const ehAluno = true;
 const possuiAcesso =
     ehProfessor || ehAluno;
@@ -95,7 +95,7 @@ console.log(possuiAcesso);
 
 const bloqueado = false;
 
-console.log(!bloqueado);
+console.log(!bloqueado);*/
 
 const nomeProduto = "celular";
 const preco = 1000;
@@ -120,3 +120,43 @@ console.log(`Valor Final: ${valorFinal}`);
 console.log (typeof nomeProduto)
 console.log (typeof preco)
 console.log (typeof disponibilidade)
+
+
+const nota = 60;
+const frequencia = 70;
+if (nota >= 70 && frequencia >= 80) {
+    console.log("Nota e frequência suficientes");
+} else if (nota < 70 && frequencia >= 80) {
+    console.log("Nota insuficiente");
+}
+else if (nota >= 70 && frequencia < 80) {
+    console.log("Frequência insuficiente");
+}
+else { 
+    console.log("Nota e frequência insuficientes")
+}
+
+
+const prioridade = "baixa";
+const atrasado = true;
+if (prioridade === "alta" && atrasado) {
+    console.log ("ATENÇÃO IMEDIATA");
+} else { 
+    console.log ("Acompanhamento normal")
+}
+
+const idade = 17;
+const possuiCadastro = true;
+const bloqueado = false;
+
+if (idade >= 18 && possuiCadastro && !bloqueado) {
+    console.log("Acesso permitido");
+} else {
+    console.log("Acesso negado");
+}
+
+
+console.log("Informação");
+console.warn("Atenção");
+console.error("Erro");
+
