@@ -156,7 +156,60 @@ if (idade >= 18 && possuiCadastro && !bloqueado) {
 }
 
 
-console.log("Informação");
+/*console.log("Informação");
 console.warn("Atenção");
-console.error("Erro");
+console.error("Erro");*/
 
+
+
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+for (let i = 2; i <= 10; i+=2) {
+    console.log(i);
+}
+
+
+let soma = 0;
+
+for (let i = 1; i <= 5; i++) {
+    soma = soma + i;
+}
+
+console.log(soma);
+
+
+let cont = 0
+
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+        console.log (i)
+    }
+}
+
+let contador = 1;
+
+while (contador <= 5) {
+    console.log(contador);
+
+    contador++;
+}
+
+const quantidadePedidos = 8;
+
+for (let i = 1; i <= quantidadePedidos; i++) {
+    console.log(`Processando pedido ${i}`)
+}
+
+let i = 10;
+
+for (let i = 10; i>= 1; i--) {
+    console.log(i);
+}
+
+console.log("Fim");
