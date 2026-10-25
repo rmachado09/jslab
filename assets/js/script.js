@@ -416,3 +416,96 @@ pedidos.forEach(pedido => {
         `${id} - ${cliente} - ${status}`
     );
 });
+
+
+
+const pedidoEncontrado =
+    pedidos.find(pedido => pedido.id === 1043);
+
+console.log(pedidoEncontrado);
+
+
+function buscarPedidoPorId(id) {
+    return pedidos.find(
+        pedido => pedido.id === id
+    );
+}
+
+console.log(buscarPedidoPorId(1042));
+console.log(buscarPedidoPorId(9999));
+
+const indice =
+    pedidos.findIndex(
+        pedido => pedido.id === 1047
+    );
+
+console.log(indice);
+
+const pedidosAbertos =
+    pedidos.filter(
+        pedido => pedido.status === "aberto"
+    );
+
+console.log(pedidosAbertos);
+
+function filtrarPorPrioridade(prioridade) {
+    return pedidos.filter(pedido => pedido.prioridade === prioridade);
+}
+
+console.log(filtrarPorPrioridade("normal"));
+console.log(filtrarPorPrioridade("alta"));
+console.log(filtrarPorPrioridade("urgente"));
+
+const nomesClientes =
+    pedidos.map(
+        pedido => pedido.cliente
+    );
+
+console.log(nomesClientes);
+
+const resumos =
+    pedidos.map(pedido => {
+        return `${pedido.id} - ${pedido.cliente}`;
+    });
+
+console.log(resumos);
+
+/*const texto = "Clínica Central";
+
+console.log(
+    texto.includes("Central")
+);*/
+
+const texto = "Clínica Central";
+const termo = "central";
+
+console.log(
+    texto
+        .toLowerCase()
+        .includes(termo.toLowerCase())
+);
+
+function pesquisarPedidos(termo) {
+    const termoNormalizado =
+        termo.toLowerCase();
+
+    return pedidos.filter(pedido =>
+        pedido.cliente
+            .toLowerCase()
+            .includes(termoNormalizado) ||
+        pedido.status
+            .toLowerCase()
+            .includes(termoNormalizado) ||
+        pedido.prioridade
+            .toLowerCase()
+            .includes(termoNormalizado)    
+            
+    );
+}
+
+console.log(pesquisarPedidos("central"));
+console.log(pesquisarPedidos("loja"));
+console.log(pesquisarPedidos("almeida"));
+
+console.log(pesquisarPedidos("alta"));
+
