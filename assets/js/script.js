@@ -292,8 +292,8 @@ function calcularValorFinal(
     return total;
 }
 
-const resultado =
-    calcularValorFinal(80, 3, 10);
+/*const resultado =
+    calcularValorFinal(80, 3, 10);*/
 
 console.log(resultado);
 
@@ -509,3 +509,96 @@ console.log(pesquisarPedidos("almeida"));
 
 console.log(pesquisarPedidos("alta"));
 
+
+pedidos.sort(
+    (a, b) => a.valor - b.valor
+);
+
+console.log(pedidos);
+
+const pedidosOrdenados = [
+    ...pedidos
+];
+
+pedidosOrdenados.sort(
+    (a, b) => a.valor - b.valor
+);
+
+const copia = [...pedidos];
+
+const crescente = [...pedidos];
+crescente.sort(
+    (a, b) => a.valor - b.valor
+);
+
+const decrescente = [...pedidos];
+decrescente.sort(
+    (a, b) => b.valor - a.valor
+);
+
+const porCliente = [...pedidos];
+
+porCliente.sort(
+    (a, b) =>
+        a.cliente.localeCompare(b.cliente)
+);
+
+function ordenarPorValorCrescente() {
+  return [...pedidos].sort((a, b) => a.valor - b.valor);
+}
+
+function ordenarPorValorDecrescente() {
+  return [...pedidos].sort((a, b) => b.valor - a.valor);
+}
+
+function ordenarPorCliente() {
+  return [...pedidos].sort((a, b) => a.cliente.localeCompare(b.cliente));
+}
+
+console.log(ordenarPorValorCrescente());
+console.log(ordenarPorValorDecrescente());
+console.log(ordenarPorCliente());
+
+
+const resultado =
+    pedidos
+        .filter(
+            pedido => pedido.status === "aberto"
+        )
+        .filter(
+            pedido => pedido.valor >= 500
+        );
+function processarPedidos(prioridade, valorMinimo) {
+    return pedidos
+    .filter(pedido => pedido.prioridade === prioridade)
+    .filter(pedido => pedido.valor >= valorMinimo)
+    .sort((a,b) => a.valor - b.valor);
+}
+
+console.log(processarPedidos("alta", 500));
+console.log(processarPedidos("urgente, 100"));
+
+const formatadorMoeda =
+    new Intl.NumberFormat(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+console.log(
+    formatadorMoeda.format(850)
+);
+
+pedidos.forEach(pedido => {
+
+    const valorFormatado =
+        formatadorMoeda.format(
+            pedido.valor
+        );
+
+    console.log(
+        `${pedido.cliente} - ${valorFormatado}`
+    );
+});
