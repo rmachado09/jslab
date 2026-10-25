@@ -103,7 +103,7 @@ const quantidade = 5;
 const percentualDesconto = 10;
 const disponibilidade = true;
 
-const subtotal = preco * quantidade;
+/*const subtotal = preco * quantidade;
 const desconto = subtotal * (percentualDesconto / 100);
 const valorFinal = subtotal - desconto;
 
@@ -115,7 +115,7 @@ console.log(`Disponível: ${disponibilidade ? "Sim" : "Não"}`);
 
 console.log(`Subtotal: ${subtotal}`);
 console.log(`Desconto: ${desconto}`);
-console.log(`Valor Final: ${valorFinal}`);
+console.log(`Valor Final: ${valorFinal}`);*/
 
 console.log (typeof nomeProduto)
 console.log (typeof preco)
@@ -213,3 +213,65 @@ for (let i = 10; i>= 1; i--) {
 }
 
 console.log("Fim");
+
+
+function exibirSaudacao() {
+    console.log("Olá!");
+}
+
+exibirSaudacao()
+
+
+function exibirNome(nome) {
+    console.log(`Olá, ${nome}!`);
+}
+
+exibirNome("Marina");
+exibirNome("Carlos");
+exibirNome("João");
+
+
+function calcularTotal(preco, quantidade) {
+    return total = preco * quantidade;
+}
+
+const totalPedido =
+    calcularTotal(50, 3);
+
+console.log(totalPedido);
+
+
+function calcularDesconto(valor, percentual) {
+    return valor * (percentual/100);
+}
+
+const valorCompra = 200;
+
+const desconto = 
+    calcularDesconto(valorCompra,10);
+
+const totalFinal = valorCompra - desconto;
+
+console.log(desconto);
+console.log(totalFinal);
+
+
+function verificarSituacao(nota, frequencia) {
+    if (nota >= 60 && frequencia >= 75) {
+        return "Aprovado";
+    }
+
+    if (nota < 60 && frequencia < 75) {
+        return "Reprovado por nota e por frequência";
+    }
+
+    if (nota < 60) {
+        return "Reprovado por nota";
+    }
+
+    return "Reprovado por frequência";
+}
+
+console.log(verificarSituacao(70, 80)); 
+
+
