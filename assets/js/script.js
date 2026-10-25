@@ -275,3 +275,42 @@ function verificarSituacao(nota, frequencia) {
 console.log(verificarSituacao(70, 80)); 
 
 
+function calcularValorFinal(
+    preco,
+    quantidade,
+    percentualDesconto
+) {
+    const subtotal =
+        preco * quantidade;
+
+    const desconto =
+        subtotal * percentualDesconto / 100;
+
+    const total =
+        subtotal - desconto;
+
+    return total;
+}
+
+const resultado =
+    calcularValorFinal(80, 3, 10);
+
+console.log(resultado);
+
+function calcularMedia(
+    nota1,
+    nota2,
+    nota3
+) {
+    const total =
+        nota1 + nota2 + nota3;
+
+    const media =
+        total / 3;
+
+    return media;
+}
+
+console.log(
+    calcularMedia(70, 80, 90)
+);
