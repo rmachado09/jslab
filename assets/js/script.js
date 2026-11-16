@@ -619,10 +619,10 @@ resumo.textContent =
 titulo.textContent =
     "JSLab — Gestão de Pedidos"; */   
 
-const titulo =
+/*const titulo =
     document.querySelector("h1");
 
-titulo.classList.add("destaque");
+titulo.classList.add("destaque");*/
 
 const link =
     document.querySelector("#link-ajuda");
@@ -651,3 +651,82 @@ const lista =
 lista.append(paragrafo);
 
 paragrafo.remove();
+
+
+const artigo =
+    document.createElement("article");
+
+const titulo =
+    document.createElement("h3");
+
+titulo.textContent =
+    "Pedido PS-1042";
+
+artigo.append(titulo);
+
+lista.append(artigo);
+
+function renderizarPedidos(listaPedidos) {
+
+    const lista =
+        document.querySelector(
+            "#lista-pedidos"
+        );
+
+    lista.textContent = "";
+
+    listaPedidos.forEach(pedido => {
+
+        const artigo =
+            document.createElement("article");
+
+        const titulo =
+            document.createElement("h3");
+
+        titulo.textContent =
+            `PS-${pedido.id}`;
+
+        artigo.append(titulo);
+
+        lista.append(artigo);
+    });
+}
+
+renderizarPedidos(pedidos);
+
+function formatarMoeda(valor) {
+    const formatador =
+        new Intl.NumberFormat(
+            "pt-BR",
+            {
+                style: "currency",
+                currency: "BRL"
+            }
+        ).format(valor); }
+
+        function criarCardPedido(pedido) {
+            const card=document.createElement("article");
+            card.classList.add("card-pedido");
+
+            card.innerHTML=`
+            <h3>Pedido PS-${pedido.id}</h3>
+            <p>Cliente: ${pedido.cliente}</p>
+            <p>Categoria: ${pedido.categoria}</p>
+            <p>Prioridade: ${pedido.prioridade}</p>
+            <p>Status: ${pedido.status}</p>
+            <p>Valor: ${formatarMoeda(pedido.valor)}</p>
+            `;
+
+            return card;
+        }
+
+    function renderizarPedidos(listaPedidos) {
+        const container = document.querySelector("#lista-pedidos");
+        container.innerHTML = "";
+
+        listaPedidos.forEach(pedido => {
+            container.appendChild(criarCardPedido(pedido));
+        });
+    }
+
+renderizarPedidos(pedidos);
