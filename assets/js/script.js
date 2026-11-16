@@ -717,8 +717,9 @@ function formatarMoeda(valor) {
             <p>Valor: ${formatarMoeda(pedido.valor)}</p>
             <button data-id="${pedido.id}">Ver detalhes</button>
             <button data-id="${pedido.id}" data-acao="detalhes">Ver detalhes</button>
+            <a href="detalhes.html?id=${pedido.id}">Ver detalhes</a>
             `;
-
+            
             return card;
         }
 
@@ -844,4 +845,4 @@ function ordenarPedidos(lista, criterio) {
   return copia;
 }
 
-ordenacao.addEventListener("change", atualizarLista);
+ordenacao.addEventListener("change", atualizarVisualizacao);
