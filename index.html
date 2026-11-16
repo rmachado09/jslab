@@ -35,8 +35,49 @@
             <a id="link-ajuda" href="#">
                  Ajuda
             </a>
+<label for="campo-busca">
+    Pesquisar pedidos
+</label>
+
+<input
+    id="campo-busca"
+    type="search"
+    placeholder="Digite um cliente, status ou prioridade"
+>
+
+<label for="filtro-status">
+    Status
+</label>
         </section>
 
+        <button id="botao-teste">
+              Testar evento
+        </button>
+
+    <select id="filtro-status">
+    <option value="todos">Todos</option>
+    <option value="aberto">Aberto</option>
+    <option value="atendimento">Em atendimento</option>
+    <option value="concluido">Concluído</option>
+</select>
+
+<label for="ordenacao">
+    Ordenar
+</label>
+
+<select id="ordenacao">
+    <option value="cliente">
+        Cliente
+    </option>
+
+    <option value="valor-crescente">
+        Menor valor
+    </option>
+
+    <option value="valor-decrescente">
+        Maior valor
+    </option>
+</select>
     </main>
 
 </body>

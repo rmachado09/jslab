@@ -645,12 +645,12 @@ paragrafo.textContent =
 
 console.log(paragrafo);
 
-const lista =
+/*const lista =
     document.querySelector("#lista-pedidos");
 
 lista.append(paragrafo);
 
-paragrafo.remove();
+paragrafo.remove();*/
 
 
 const artigo =
@@ -664,7 +664,7 @@ titulo.textContent =
 
 artigo.append(titulo);
 
-lista.append(artigo);
+/*lista.append(artigo);*/
 
 function renderizarPedidos(listaPedidos) {
 
@@ -715,6 +715,8 @@ function formatarMoeda(valor) {
             <p>Prioridade: ${pedido.prioridade}</p>
             <p>Status: ${pedido.status}</p>
             <p>Valor: ${formatarMoeda(pedido.valor)}</p>
+            <button data-id="${pedido.id}">Ver detalhes</button>
+            <button data-id="${pedido.id}" data-acao="detalhes">Ver detalhes</button>
             `;
 
             return card;
@@ -730,3 +732,116 @@ function formatarMoeda(valor) {
     }
 
 renderizarPedidos(pedidos);
+
+
+/*const botao =
+    document.querySelector("#botao-teste");*/
+
+/*botao.addEventListener(
+    "click",
+    () => {
+        console.log("Botão clicado");
+    }
+);
+
+botao.addEventListener(
+    "click",
+    event => {
+        console.log(event);
+    }
+);*/
+
+const botao = document.querySelector("button");
+console.log(botao.dataset.id);
+console.log(botao.dataset.acao);
+
+const lista =
+    document.querySelector(
+        "#lista-pedidos"
+    );
+
+lista.addEventListener(
+    "click",
+    event => {
+        console.log(event.target);
+    }
+);
+
+const campoBusca =
+    document.querySelector(
+        "#campo-busca"
+    );
+
+campoBusca.addEventListener(
+    "input",
+    () => {
+
+        const termo =
+            campoBusca.value;
+
+        console.log(termo);
+    }
+);
+
+const filtroStatus = document.querySelector("#filtro-status");
+
+function filtrarPedidos() {
+  const termo = campoBusca.value.toLowerCase().trim();
+  const status = filtroStatus.value;
+
+  return pedidos.filter(pedido => {
+    const bateBusca =
+      pedido.cliente.toLowerCase().includes(termo) ||
+      pedido.status.toLowerCase().includes(termo) ||
+      pedido.prioridade.toLowerCase().includes(termo);
+
+    const bateStatus =
+      status === "todos" || pedido.status.toLowerCase() === status;
+
+    return bateBusca && bateStatus;
+  });
+}
+
+function atualizarVisualizacao() {
+  renderizarPedidos(filtrarPedidos());
+}
+
+campoBusca.addEventListener("input", atualizarVisualizacao);
+filtroStatus.addEventListener("change", atualizarVisualizacao)
+
+const ordenacao = document.querySelector("#ordenacao");
+
+function filtrarPedidos() {
+  const termo = campoBusca.value.toLowerCase().trim();
+  const status = filtroStatus.value;
+
+  const resultado = pedidos.filter(pedido => {
+    const bateBusca =
+      pedido.cliente.toLowerCase().includes(termo) ||
+      pedido.status.toLowerCase().includes(termo) ||
+      pedido.prioridade.toLowerCase().includes(termo);
+
+    const bateStatus =
+      status === "todos" || pedido.status.toLowerCase() === status;
+
+    return bateBusca && bateStatus;
+  });
+
+  return ordenarPedidos(resultado, ordenacao.value);
+}
+
+function ordenarPedidos(lista, criterio) {
+  const copia = [...lista];
+
+  if (criterio === "cliente") {
+    copia.sort((a, b) => a.cliente.localeCompare(b.cliente));
+  } else if (criterio === "valor-crescente") {
+    copia.sort((a, b) => a.valor - b.valor);
+  } else if (criterio === "valor-decrescente") {
+    copia.sort((a, b) => b.valor - a.valor);
+  }
+
+  return copia;
+}
+
+ordenacao.addEventListener("change", atualizarLista);
