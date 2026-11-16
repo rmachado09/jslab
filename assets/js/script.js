@@ -1,4 +1,4 @@
-console.log("JavaScript carregado com sucesso!");
+/*console.log("JavaScript carregado com sucesso!");
 
 /*let quantidade = 3;
 
@@ -8,7 +8,7 @@ quantidade = 5;
 
 console.log(quantidade);*/
 
-const nomeCurso = "Desenvolvimento de Interfaces Web";
+/*const nomeCurso = "Desenvolvimento de Interfaces Web";
 
 console.log(nomeCurso);
 
@@ -22,7 +22,7 @@ console.log(typeof nome);
 console.log(typeof idade);
 console.log(typeof aprovado);*/
 
-console.log(typeof "Olá");
+/*console.log(typeof "Olá");
 console.log(typeof 42);
 console.log(typeof false);
 
@@ -49,7 +49,7 @@ console.log (`Subtotal: ${subtotal}`);
 console.log (`Desconto: ${desconto}`);
 console.log (`Total: ${total}`);*/
 
-const a = 10;
+/*const a = 10;
 const b = 3;
 
 console.log(a + b);
@@ -97,7 +97,7 @@ const bloqueado = false;
 
 console.log(!bloqueado);*/
 
-const nomeProduto = "celular";
+/*const nomeProduto = "celular";
 const preco = 1000;
 const quantidade = 5;
 const percentualDesconto = 10;
@@ -117,7 +117,7 @@ console.log(`Subtotal: ${subtotal}`);
 console.log(`Desconto: ${desconto}`);
 console.log(`Valor Final: ${valorFinal}`);*/
 
-console.log (typeof nomeProduto)
+/*console.log (typeof nomeProduto)
 console.log (typeof preco)
 console.log (typeof disponibilidade)
 
@@ -162,7 +162,7 @@ console.error("Erro");*/
 
 
 
-for (let i = 1; i <= 5; i++) {
+/*for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
@@ -295,7 +295,7 @@ function calcularValorFinal(
 /*const resultado =
     calcularValorFinal(80, 3, 10);*/
 
-console.log(resultado);
+/*console.log(resultado);
 
 function calcularMedia(
     nota1,
@@ -368,7 +368,7 @@ console.log(pedido.status);
 pedido.status = "atendimento";
 console.log(pedido)*/
 
-const pedidos = [
+/*const pedidos = [
     {
         id: 1042,
         cliente: "Clínica Central",
@@ -476,7 +476,7 @@ console.log(
     texto.includes("Central")
 );*/
 
-const texto = "Clínica Central";
+/*const texto = "Clínica Central";
 const termo = "central";
 
 console.log(
@@ -601,4 +601,53 @@ pedidos.forEach(pedido => {
     console.log(
         `${pedido.cliente} - ${valorFormatado}`
     );
-});
+});*/
+
+
+
+const resumo =
+    document.querySelector("#resumo");
+
+console.log(resumo);
+
+resumo.textContent =
+    `${pedidos.length} pedidos encontrados`;
+
+/*const titulo =
+    document.querySelector("h1");
+
+titulo.textContent =
+    "JSLab — Gestão de Pedidos"; */   
+
+const titulo =
+    document.querySelector("h1");
+
+titulo.classList.add("destaque");
+
+const link =
+    document.querySelector("#link-ajuda");
+
+link.setAttribute(
+    "href",
+    "https://example.com"
+);
+
+console.log(
+    link.getAttribute("href")
+);
+
+
+const paragrafo =
+    document.createElement("p");
+
+paragrafo.textContent =
+    "Elemento criado com JavaScript";
+
+console.log(paragrafo);
+
+const lista =
+    document.querySelector("#lista-pedidos");
+
+lista.append(paragrafo);
+
+paragrafo.remove();
